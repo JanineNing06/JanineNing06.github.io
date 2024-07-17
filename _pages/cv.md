@@ -33,6 +33,7 @@ Work experience
     
 * Fall 2020: Research Assistant
   * Beijing Normal University-Hong Kong Baptist University United International College
+  * Supervisor: [Prof. Jingjin Wu](https://staff.uic.edu.cn/Jingjinwu/en)
 
 
 Awards
