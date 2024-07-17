@@ -9,56 +9,46 @@ redirect_from:
 
 {% include base_path %}
 
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Mathematics (Statistics track),
+  University of Texas at Arlington, 2023 - present
+* Mphil in Probability and Mathematical Statistics (joint Program with HKBU),
+  Beijing Normal University-Hong Kong Baptist University United International College, 2021 - 2023
+* B.S. in Financial Mathematics,
+  Beijing Normal University-Hong Kong Baptist University United International College, 2016 - 2020
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Spring 2024 - now: Research Assistant
+  * University of Texas at Arlington
+  * Supervisor: [Prof. Hanyi Liu](https://www.uta.edu/academics/faculty/profile?username=hanli), [Prof. Li Wang](https://websites.uta.edu/wangl3/)
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2023: Teaching Assistant
+  * University of Texas at Arlington
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
+* Spring 2021 - Spring 2023: Teaching Assistant
+  * Beijing Normal University-Hong Kong Baptist University United International College
+    
+* Fall 2020: Research Assistant
+  * Beijing Normal University-Hong Kong Baptist University United International College
+
+
+Awards
+======
+* 2024: Benny M. McCarley Scholarship
+* Spring 2024 - now: Graduate Research Assistantship 
+* Fall 2023: Graduate Teaching Assistantship 
+* Spring 2021 - Fall 2022: Graduate Full Scholarship
+* 2020: Undergraduate Scholarship (Second Class Award)
+* 2018: The American Mathematical Contest in Modelling (Honourable Mention)
+
+
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* MATLAB, Python, C++, R, EViews
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
