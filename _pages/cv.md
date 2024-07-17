@@ -14,7 +14,7 @@ Education
 ======
 * Ph.D in Mathematics (Statistics track),
   University of Texas at Arlington, 2023 - present
-* Mphil in Probability and Mathematical Statistics (joint Program with HKBU),
+* Mphil in Probability and Mathematical Statistics (joint program with HKBU),
   Beijing Normal University-Hong Kong Baptist University United International College, 2021 - 2023
 * B.S. in Financial Mathematics,
   Beijing Normal University-Hong Kong Baptist University United International College, 2016 - 2020
