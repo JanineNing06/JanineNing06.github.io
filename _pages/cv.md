@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<br>
+<br>
 
 Education
 ======
@@ -25,7 +27,7 @@ Work experience
   * University of Texas at Arlington
   * Supervisor: [Prof. Hanyi Liu](https://www.uta.edu/academics/faculty/profile?username=hanli), [Prof. Li Wang](https://websites.uta.edu/wangl3/)
 
-* Fall 2023: Teaching Assistant
+* Fall 2023 - now: Teaching Assistant
   * University of Texas at Arlington
 
 * Spring 2021 - Spring 2023: Teaching Assistant
@@ -38,6 +40,7 @@ Work experience
 
 Awards
 ======
+* Fall 2024: Graduate Teaching Assistantship 
 * 2024: Benny M. McCarley Scholarship
 * Spring 2024 - now: Graduate Research Assistantship 
 * Fall 2023: Graduate Teaching Assistantship 
