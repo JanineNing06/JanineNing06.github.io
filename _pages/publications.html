@@ -1,0 +1,240 @@
+---
+layout: archive
+title: 
+permalink: /publications/
+author_profile: true
+---
+
+<style>
+.pub-header-card {
+  background: #f0f6fd;
+  border: 1px solid #d0e4f0;
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.pub-header-left h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.3em;
+}
+.pub-header-left a {
+  color: #2a6cc0;
+  font-size: 0.95em;
+  text-decoration: none;
+}
+.pub-header-left a:hover { text-decoration: underline; }
+.pub-stats {
+  display: flex;
+  gap: 40px;
+  text-align: center;
+}
+.pub-stats .stat-num {
+  font-size: 2em;
+  font-weight: 700;
+  color: #2a6cc0;
+  line-height: 1;
+}
+.pub-stats .stat-label {
+  font-size: 0.7em;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.pub-filter-btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1.5px solid #ccc;
+  background: #fff;
+  color: #444;
+  font-size: 0.88em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.pub-filter-btn:hover {
+  border-color: #2a6cc0;
+  color: #2a6cc0;
+}
+.pub-filter-btn.active {
+  background: #2a6cc0;
+  border-color: #2a6cc0;
+  color: #fff;
+}
+
+.pub-year-group { margin-bottom: 32px; }
+.pub-year-label {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #eee;
+}
+
+.pub-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: box-shadow 0.15s;
+}
+.pub-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.pub-card.hidden { display: none !important; }
+
+.pub-year-badge {
+  background: #eef4fd;
+  color: #2a6cc0;
+  border: 1px solid #c0d8f0;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.8em;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pub-card-body { flex: 1; }
+.pub-card-title {
+  font-size: 0.97em;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.pub-card-title:hover { color: #2a6cc0; text-decoration: underline; }
+.pub-card-authors {
+  font-size: 0.85em;
+  color: #2a6cc0;
+  margin-top: 5px;
+}
+.pub-card-venue {
+  font-size: 0.83em;
+  color: #888;
+  font-style: italic;
+  margin-top: 3px;
+}
+.pub-type-badge {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pub-type-badge span {
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1.5px solid;
+}
+.badge-conference { color: #2a7ac0; border-color: #2a7ac0 !important; }
+.badge-review     { color: #888;    border-color: #bbb !important; }
+</style>
+
+<!-- Header Stats Card -->
+<div class="pub-header-card">
+  <div class="pub-header-left">
+    <h2>📚 Publications</h2>
+    {% if site.author.googlescholar %}
+    <a href="{{ site.author.googlescholar }}" target="_blank">Also available on Google Scholar ↗</a>
+    {% endif %}
+  </div>
+  <div class="pub-stats">
+    <div>
+      <div class="stat-num">1</div>
+      <div class="stat-label">Under Review</div>
+    </div>
+    <div>
+      <div class="stat-num">2</div>
+      <div class="stat-label">Conference</div>
+    </div>
+    <div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Total</div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Buttons -->
+<div class="pub-filters">
+  <button class="pub-filter-btn active" data-filter="all">All</button>
+  <button class="pub-filter-btn" data-filter="conferences">Conference Papers</button>
+  <button class="pub-filter-btn" data-filter="manuscripts">Under Review</button>
+</div>
+
+<!-- Publications by Year -->
+{% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+{% assign years = "" | split: "" %}
+{% for post in sorted_pubs %}
+  {% assign y = post.date | date: "%Y" %}
+  {% unless years contains y %}
+    {% assign years = years | push: y %}
+  {% endunless %}
+{% endfor %}
+
+{% for year in years %}
+<div class="pub-year-group" data-year="{{ year }}">
+  <div class="pub-year-label">{{ year }}</div>
+  {% for post in sorted_pubs %}
+    {% assign py = post.date | date: "%Y" %}
+    {% if py == year %}
+      {% assign badge_class = "badge-conference" %}
+      {% assign badge_text = "Conference" %}
+      {% if post.category == "manuscripts" %}
+        {% assign badge_class = "badge-review" %}
+        {% assign badge_text = "Under Review" %}
+      {% endif %}
+      <div class="pub-card" data-category="{{ post.category }}">
+        <div class="pub-year-badge">{{ year }}</div>
+        <div class="pub-card-body">
+          <a class="pub-card-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <div class="pub-card-authors">{{ post.citation | split: '&quot;' | first | strip }}</div>
+          <div class="pub-card-venue">{{ post.venue }}</div>
+        </div>
+        <div class="pub-type-badge">
+          <span class="{{ badge_class }}">{{ badge_text }}</span>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endfor %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.pub-filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var category = this.dataset.filter;
+
+      document.querySelectorAll('.pub-filter-btn').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      document.querySelectorAll('.pub-card').forEach(function (card) {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.pub-year-group').forEach(function (group) {
+        var visible = group.querySelectorAll('.pub-card:not(.hidden)').length;
+        group.style.display = visible ? '' : 'none';
+      });
+    });
+  });
+});
+</script>

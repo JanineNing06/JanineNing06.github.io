@@ -1,0 +1,244 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<style>
+.pub-detail-wrap { padding-bottom: 40px; }
+
+.pub-detail-title { font-size: 1.6em; font-weight: 800; color: #111; line-height: 1.35; margin-bottom: 10px; }
+.pub-detail-venue { font-size: 0.95em; color: #555; margin-bottom: 24px; }
+.pub-detail-venue em { color: #2a6cc0; }
+
+/* Tag row */
+.pub-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.pub-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  border: 1.5px solid #d0d8e8; border-radius: 999px;
+  padding: 4px 14px; font-size: 0.82em; color: #444; background: #fff;
+}
+.pub-tag.filled { background: #2a6cc0; border-color: #2a6cc0; color: #fff; font-weight: 600; }
+
+/* Action buttons */
+.pub-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+.pub-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 20px; border-radius: 8px; font-size: 0.88em; font-weight: 600;
+  text-decoration: none !important; transition: all 0.15s; cursor: pointer; border: none;
+}
+.pub-btn-primary { background: #2a6cc0; color: #fff !important; }
+.pub-btn-primary:hover { background: #1a4e99; }
+.pub-btn-secondary { background: #fff; color: #2a6cc0 !important; border: 1.5px solid #2a6cc0; }
+.pub-btn-secondary:hover { background: #f0f6fd; }
+
+/* Info card */
+.pub-info-card {
+  background: #f0f5fd; border: 1px solid #d0e0f4;
+  border-radius: 12px; padding: 20px 24px; margin-bottom: 24px;
+}
+
+/* Abstract */
+.pub-section-card {
+  background: #fff; border: 1px solid #e8e8e8;
+  border-radius: 12px; padding: 24px 28px; margin-bottom: 20px;
+}
+.pub-section-title { font-size: 1.05em; font-weight: 700; color: #2a6cc0; margin-bottom: 14px; }
+.pub-abstract-text { font-size: 0.92em; color: #333; line-height: 1.85; }
+
+/* BibTeX */
+.pub-bibtex-wrap { position: relative; }
+.pub-bibtex-box {
+  background: #f5f7fb; border: 1px solid #dde4f0; border-radius: 8px;
+  padding: 16px 20px; font-family: monospace; font-size: 0.82em;
+  color: #334; white-space: pre-wrap; overflow-wrap: break-word; word-break: normal; line-height: 1.6;
+}
+.pub-copy-btn {
+  position: absolute; top: 10px; right: 10px;
+  padding: 6px 14px; background: #2a6cc0; color: #fff;
+  border: none; border-radius: 6px; font-size: 0.8em; font-weight: 600;
+  cursor: pointer; transition: background 0.15s;
+}
+.pub-copy-btn:hover { background: #1a4e99; }
+.pub-copy-btn.copied { background: #28a745; }
+
+/* Prev / Next nav */
+.pub-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 24px; gap: 16px;
+}
+.pub-nav-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; border: 1px solid #e0e8f4; border-radius: 10px;
+  padding: 12px 24px; text-decoration: none !important;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.pub-nav-link:hover {
+  box-shadow: 0 2px 12px rgba(42,108,192,0.12);
+  border-color: #2a6cc0;
+}
+.pub-nav-disabled {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fafafa; border: 1px solid #eee; border-radius: 10px;
+  padding: 12px 24px; opacity: 0.4; cursor: default;
+}
+.pub-nav-arrow { font-size: 1.1em; color: #2a6cc0; }
+.pub-nav-disabled .pub-nav-arrow { color: #aaa; }
+.pub-nav-label {
+  font-size: 0.82em; font-weight: 700; color: #2a6cc0;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.pub-nav-disabled .pub-nav-label { color: #aaa; }
+
+/* Related */
+.pub-related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .pub-related-grid { grid-template-columns: 1fr; } }
+.pub-related-card {
+  background: #fff; border: 1px solid #e0e8f4; border-radius: 10px;
+  padding: 16px 18px; text-decoration: none !important; display: block; transition: box-shadow 0.15s;
+}
+.pub-related-card:hover { box-shadow: 0 2px 12px rgba(42,108,192,0.12); }
+.pub-related-year { font-size: 0.78em; font-weight: 700; color: #2a6cc0; margin-bottom: 6px; }
+.pub-related-title { font-size: 0.88em; font-weight: 700; color: #222; line-height: 1.4; margin-bottom: 6px; }
+.pub-related-venue { font-size: 0.8em; color: #888; font-style: italic; }
+</style>
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <div class="page__inner-wrap">
+  <section class="page__content" itemprop="text">
+  <div class="pub-detail-wrap">
+
+    <!-- Title & venue -->
+    <h1 class="pub-detail-title">{{ page.title }}</h1>
+    <div class="pub-detail-venue">
+      Published in <em>{{ page.venue }}</em>{% if page.date %}, {{ page.date | date: "%Y" }}{% endif %}
+    </div>
+
+    <!-- Info card: tags + buttons -->
+    <div class="pub-info-card">
+      <div class="pub-tags">
+        {% if page.category == 'manuscripts' %}
+          <span class="pub-tag filled">📄 Under Review</span>
+        {% else %}
+          <span class="pub-tag filled">📄 Conference Paper</span>
+        {% endif %}
+        <span class="pub-tag">👤 {{ page.first_author | default: "W. Ning" }}</span>
+        <span class="pub-tag">🗓 {{ page.date | date: "%Y" }}</span>
+        <span class="pub-tag">🏛 {{ page.venue }}</span>
+        {% if page.pages %}<span class="pub-tag">{{ page.pages }}</span>{% endif %}
+      </div>
+      <div class="pub-actions">
+        {% if page.paperurl %}
+          <a class="pub-btn pub-btn-primary" href="{{ page.paperurl }}" target="_blank">🔗 View Paper</a>
+        {% endif %}
+        {% if page.pdf_local %}
+          <a class="pub-btn pub-btn-secondary" href="{{ page.pdf_local }}" download>📥 Download PDF</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Abstract -->
+    {% if page.abstract %}
+    <div class="pub-section-card">
+      <div class="pub-section-title">📝 Abstract</div>
+      <div class="pub-abstract-text">{{ page.abstract }}</div>
+    </div>
+    {% endif %}
+
+    <!-- BibTeX -->
+    {% if page.bibtex %}
+    <div class="pub-section-card">
+      <div class="pub-section-title">📋 BibTeX Citation</div>
+      <div class="pub-bibtex-wrap">
+        <pre class="pub-bibtex-box" id="bibtex-content">{{ page.bibtex }}</pre>
+        <button class="pub-copy-btn" onclick="copyBibtex(this)">📋 Copy</button>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Related Publications -->
+    {% assign related = site.publications | where_exp: "p", "p.url != page.url" %}
+    {% if related.size > 0 %}
+    <div class="pub-section-card">
+      <div class="pub-section-title">🔗 Related Publications</div>
+      <div class="pub-related-grid">
+        {% for p in related %}
+        <a class="pub-related-card" href="{{ p.url | relative_url }}">
+          <div class="pub-related-year">{{ p.date | date: "%Y" }}</div>
+          <div class="pub-related-title">{{ p.title }}</div>
+          <div class="pub-related-venue">{{ p.venue }}</div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Previous / Next navigation -->
+    {% assign sorted_pubs = site.publications | sort: 'date' %}
+    {% assign prev_pub = nil %}
+    {% assign next_pub = nil %}
+    {% assign found = false %}
+    {% for p in sorted_pubs %}
+      {% if found and next_pub == nil %}
+        {% assign next_pub = p %}
+      {% endif %}
+      {% if p.url == page.url %}
+        {% assign found = true %}
+      {% endif %}
+      {% unless found %}
+        {% assign prev_pub = p %}
+      {% endunless %}
+    {% endfor %}
+
+    <div class="pub-nav">
+      <div class="pub-nav-side pub-nav-prev">
+        {% if prev_pub %}
+        <a href="{{ prev_pub.url | relative_url }}" class="pub-nav-link">
+          <span class="pub-nav-arrow">←</span>
+          <span class="pub-nav-label">Previous</span>
+        </a>
+        {% else %}
+        <div class="pub-nav-link pub-nav-disabled">
+          <span class="pub-nav-arrow">←</span>
+          <span class="pub-nav-label">Previous</span>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="pub-nav-side pub-nav-next">
+        {% if next_pub %}
+        <a href="{{ next_pub.url | relative_url }}" class="pub-nav-link">
+          <span class="pub-nav-label">Next</span>
+          <span class="pub-nav-arrow">→</span>
+        </a>
+        {% else %}
+        <div class="pub-nav-link pub-nav-disabled">
+          <span class="pub-nav-label">Next</span>
+          <span class="pub-nav-arrow">→</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div><!-- pub-detail-wrap -->
+  </section>
+  </div><!-- page__inner-wrap -->
+  </article>
+</div><!-- main -->
+
+<script>
+function copyBibtex(btn) {
+  var text = document.getElementById('bibtex-content').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(function () {
+      btn.textContent = '📋 Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>

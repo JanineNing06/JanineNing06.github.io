@@ -1,3 +1,34 @@
 <!-- start custom footer snippets -->
-<a href="/sitemap/">Sitemap</a>
+
+<style>
+.page__footer-follow { display: none; }
+.page__footer-copyright {
+  text-align: center;
+  font-size: 0.82em;
+  color: #999;
+  padding: 4px 0;
+}
+.page__footer { padding-top: 1px; padding-bottom: 1px; }
+.page__footer-copyright a { color: #aaa; }
+.page__footer-copyright a:hover { color: #2a6cc0; }
+</style>
+
+<!-- Support for MatJax -->
+<script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+
+<!-- Support for Mermaid -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad:true, theme:'default'});
+    await mermaid.run({querySelector:'code.language-mermaid'});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.querySelector('.page__footer-copyright');
+  if (el) el.innerHTML = '&copy; ' + new Date().getFullYear() + ' Wanjun Ning';
+});
+</script>
+
 <!-- end custom footer snippets -->
