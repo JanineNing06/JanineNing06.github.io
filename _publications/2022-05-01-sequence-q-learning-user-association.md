@@ -7,6 +7,7 @@ permalink: /publication/2022-sequence-q-learning-user-association
 date: 2022-05-01
 venue: "2022 IEEE International Conference on Communications (ICC)"
 pages: "pp. 726–732"
+authors: "W. Ning, Z. Xu, J. Wu and T. Tong"
 first_author: "W. Ning (First Author)"
 paperurl: "https://ieeexplore.ieee.org/document/9839128"
 pdf_local: "/files/Sequence_Q-Learning_Algorithm_for_Optimal_Mobility-Aware_User_Association.pdf"

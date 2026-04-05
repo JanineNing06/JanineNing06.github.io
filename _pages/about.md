@@ -120,32 +120,32 @@ redirect_from:
 
 <div class="ri-grid">
   <div class="ri-card">
-    <div class="ri-icon">📉</div>
+    <div class="ri-icon">📐</div>
     <div class="ri-title">Dimensionality Reduction</div>
     <div class="ri-desc">Sparse PCA and graph-regularized projection methods for high-dimensional data analysis.</div>
   </div>
   <div class="ri-card">
-    <div class="ri-icon">🕸️</div>
+    <div class="ri-icon">🧩</div>
     <div class="ri-title">Structure Learning</div>
     <div class="ri-desc">Adaptive graph learning and data-driven similarity estimation for complex structured data.</div>
   </div>
   <div class="ri-card">
-    <div class="ri-icon">🔀</div>
+    <div class="ri-icon">🧠</div>
     <div class="ri-title">Multi-view Learning</div>
     <div class="ri-desc">Multimodal fusion across time series, spectra, images, and text for robust representation.</div>
   </div>
   <div class="ri-card">
-    <div class="ri-icon">⚡</div>
+    <div class="ri-icon">💡</div>
     <div class="ri-title">Optimization for Big Data</div>
     <div class="ri-desc">Efficient alternating minimization and scalable algorithms with convergence guarantees.</div>
   </div>
   <div class="ri-card">
-    <div class="ri-icon">🧠</div>
+    <div class="ri-icon">🎯</div>
     <div class="ri-title">Feature Selection</div>
     <div class="ri-desc">Attention-based neural networks with unrolling strategies for unsupervised feature selection.</div>
   </div>
   <div class="ri-card">
-    <div class="ri-icon">🏥</div>
+    <div class="ri-icon">🧬</div>
     <div class="ri-title">Clinical Applications</div>
     <div class="ri-desc">Multimodal EEG–bbNIRS fusion for early Alzheimer's disease screening and classification.</div>
   </div>
@@ -176,7 +176,7 @@ redirect_from:
 }
 .about-news-date {
   color: #2a6cc0; font-size: 0.82em; font-weight: 700;
-  white-space: nowrap; flex-shrink: 0; width: 72px; text-align: right;
+  white-space: nowrap; flex-shrink: 0; width: 90px; text-align: right;
 }
 .about-news-text { font-size: 0.9em; color: #333; line-height: 1.55; }
 .about-news-text strong { color: #111; }
@@ -185,46 +185,61 @@ redirect_from:
   font-size: 0.88em; font-weight: 600; color: #2a6cc0; text-decoration: none;
 }
 .about-news-more:hover { text-decoration: underline; }
+
+/* ── Dark mode overrides ── */
+html[data-theme="dark"] .about-hero {
+  background: linear-gradient(135deg, #1a2535 0%, #1e2d42 60%, #162234 100%);
+}
+html[data-theme="dark"] .about-hero-title { color: #e8e8e8; }
+html[data-theme="dark"] .about-hero-title span { color: #4a9fd4; }
+html[data-theme="dark"] .about-hero-tag {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(74,159,212,0.3);
+  color: #c0c8d8;
+}
+html[data-theme="dark"] .about-hero-body { color: #d0d8e8; }
+html[data-theme="dark"] .about-hero-body strong { color: #4a9fd4; }
+html[data-theme="dark"] .about-hero-keywords { color: #909aaa; }
+html[data-theme="dark"] .about-hero-keywords span {
+  background: rgba(74,159,212,0.12);
+  border-color: rgba(74,159,212,0.3);
+  color: #4a9fd4;
+}
+html[data-theme="dark"] .ri-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .ri-card:hover {
+  border-color: #4a9fd4;
+  box-shadow: 0 3px 14px rgba(74,159,212,0.15);
+}
+html[data-theme="dark"] .ri-title { color: #4a9fd4; }
+html[data-theme="dark"] .ri-desc { color: #a8b0c0; }
+html[data-theme="dark"] .about-news-list {
+  background: #3a3a3a;
+  border-color: #505868;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+html[data-theme="dark"] .about-news-item { border-bottom-color: #4a4f5a; }
+html[data-theme="dark"] .about-news-item:hover {
+  background: #3d4a5c;
+  box-shadow: 0 2px 10px rgba(74,159,212,0.12);
+}
+html[data-theme="dark"] .about-news-date { color: #4a9fd4; }
+html[data-theme="dark"] .about-news-text { color: #c8d0e0; }
+html[data-theme="dark"] .about-news-text strong { color: #e8e8e8; }
+html[data-theme="dark"] .about-news-more { color: #4a9fd4; }
 </style>
 
 
 <div class="about-news-list">
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+  {% for post in sorted_posts %}
   <div class="about-news-item">
-    <span class="about-news-date">2026</span>
-    <span class="about-news-text">Received <strong>Math Academic Excellence Scholarship</strong></span>
+    <span class="about-news-date">{{ post.date | date: "%b %Y" }}</span>
+    <span class="about-news-text"><a href="{{ post.permalink | relative_url }}" style="color:inherit;text-decoration:none;">{{ post.excerpt | strip_html }}</a></span>
   </div>
-  <div class="about-news-item">
-    <span class="about-news-date">May 2026</span>
-    <span class="about-news-text">Received <strong>Student Travel Award</strong> for NSF-CBMS 2026 (Ypsilanti, MI)</span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">Dec 2025</span>
-    <span class="about-news-text">Received <strong>Student Travel Award</strong> for CBMS AMML 2025; Poster presentation at CBMS AMML, University of Houston</span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">Oct 2025</span>
-    <span class="about-news-text">Poster presentation at <strong>AI for Biology &amp; Medicine Symposium</strong>, University of North Texas</span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">2025</span>
-    <span class="about-news-text">Received <strong>Dr. Chien-Pai Han Memorial Scholarship</strong></span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">Jun 2025</span>
-    <span class="about-news-text">Invited talk at Department of Mathematics, Hong Kong Baptist University</span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">Apr 2025</span>
-    <span class="about-news-text">Poster presentation at <strong>Discover 2025 Student Research Symposium</strong></span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">2024</span>
-    <span class="about-news-text">Received <strong>Benny M. McCarley Scholarship</strong></span>
-  </div>
-  <div class="about-news-item">
-    <span class="about-news-date">Jun 2024</span>
-    <span class="about-news-text">Invited paper presentation at <strong>International Chinese Statistical Association (ICSA)</strong></span>
-  </div>
+  {% endfor %}
 </div>
 
 <a class="about-news-more" href="/year-archive/">See all news →</a>

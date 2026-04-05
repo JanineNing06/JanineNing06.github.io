@@ -101,6 +101,59 @@ layout: default
 .pub-related-year { font-size: 0.78em; font-weight: 700; color: #2a6cc0; margin-bottom: 6px; }
 .pub-related-title { font-size: 0.88em; font-weight: 700; color: #222; line-height: 1.4; margin-bottom: 6px; }
 .pub-related-venue { font-size: 0.8em; color: #888; font-style: italic; }
+
+/* ── Dark mode overrides ── */
+html[data-theme="dark"] .pub-detail-title { color: #e0e0e0; }
+html[data-theme="dark"] .pub-detail-venue { color: #a0a8b8; }
+html[data-theme="dark"] .pub-detail-venue em { color: #4a9fd4; }
+html[data-theme="dark"] .pub-tag {
+  background: #3a3a3a;
+  border-color: #505868;
+  color: #c0c8d8;
+}
+html[data-theme="dark"] .pub-btn-secondary {
+  background: #3a3a3a;
+  color: #4a9fd4 !important;
+  border-color: #4a9fd4;
+}
+html[data-theme="dark"] .pub-btn-secondary:hover { background: #2e3a4a; }
+html[data-theme="dark"] .pub-info-card {
+  background: #2e3540;
+  border-color: #445060;
+}
+html[data-theme="dark"] .pub-section-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .pub-section-title { color: #4a9fd4; }
+html[data-theme="dark"] .pub-abstract-text { color: #c8d0e0; }
+html[data-theme="dark"] .pub-bibtex-box {
+  background: #2a2a2a;
+  border-color: #505868;
+  color: #c0c8d8;
+}
+html[data-theme="dark"] .pub-nav-link {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .pub-nav-link:hover {
+  border-color: #4a9fd4;
+  box-shadow: 0 2px 12px rgba(74,159,212,0.15);
+}
+html[data-theme="dark"] .pub-nav-disabled {
+  background: #2e2e2e;
+  border-color: #444;
+}
+html[data-theme="dark"] .pub-nav-arrow { color: #4a9fd4; }
+html[data-theme="dark"] .pub-nav-label { color: #4a9fd4; }
+html[data-theme="dark"] .pub-related-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .pub-related-card:hover { box-shadow: 0 2px 12px rgba(74,159,212,0.12); }
+html[data-theme="dark"] .pub-related-year  { color: #4a9fd4; }
+html[data-theme="dark"] .pub-related-title { color: #e0e0e0; }
+html[data-theme="dark"] .pub-related-venue { color: #909aaa; }
 </style>
 
 <div id="main" role="main">

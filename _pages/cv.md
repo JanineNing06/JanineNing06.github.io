@@ -96,19 +96,24 @@ details[open] > .cv-exp-summary::after { transform: rotate(90deg); }
 .cv-pub-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .cv-pub-year {
   background: #eef4fd; color: #2a6cc0; border: 1px solid #c0d8f0;
-  border-radius: 6px; padding: 3px 10px; font-size: 0.78em; font-weight: 600;
+  border-radius: 6px; padding: 3px 0; font-size: 0.78em; font-weight: 600;
   white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+  width: 56px; text-align: center;
 }
 .cv-pub-body { flex: 1; }
 .cv-pub-title { font-weight: 600; font-size: 0.93em; color: #222; line-height: 1.4; }
+.cv-pub-title a { color: #222; text-decoration: none; }
+.cv-pub-title a:hover { text-decoration: underline; }
 .cv-pub-authors { font-size: 0.82em; color: #888; margin-top: 4px; }
 .cv-pub-venue { font-size: 0.82em; color: #666; font-style: italic; margin-top: 2px; }
 .cv-pub-badge span {
   border-radius: 6px; padding: 3px 10px; font-size: 0.75em; font-weight: 600;
   border: 1.5px solid; flex-shrink: 0; white-space: nowrap;
 }
-.badge-conf   { color: #2a7ac0; border-color: #2a7ac0 !important; }
-.badge-review { color: #888; border-color: #bbb !important; }
+.badge-conf     { color: #2a7ac0; border-color: #2a7ac0 !important; }
+.badge-review   { color: #888;   border-color: #bbb    !important; }
+.badge-accepted { color: #1a8a4a; border-color: #1a8a4a !important; }
+.badge-journal  { color: #7a3ab0; border-color: #7a3ab0 !important; }
 
 /* Award row */
 .cv-award-card {
@@ -119,8 +124,9 @@ details[open] > .cv-exp-summary::after { transform: rotate(90deg); }
 .cv-award-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .cv-award-year {
   background: #fffbe8; color: #b07a00; border: 1px solid #e8d080;
-  border-radius: 6px; padding: 3px 10px; font-size: 0.78em; font-weight: 600;
+  border-radius: 6px; padding: 3px 0; font-size: 0.78em; font-weight: 600;
   white-space: nowrap; flex-shrink: 0;
+  width: 80px; text-align: center;
 }
 .cv-award-name { font-size: 0.9em; font-weight: 600; color: #222; flex: 1; }
 
@@ -135,6 +141,71 @@ details[open] > .cv-exp-summary::after { transform: rotate(90deg); }
 .cv-skill-tag {
   background: #fff; border: 1px solid #d0dff0; border-radius: 6px;
   padding: 3px 10px; font-size: 0.8em; color: #444;
+}
+
+/* ── Dark mode overrides ── */
+html[data-theme="dark"] .cv-download-bar {
+  background: #2e3540;
+  border-color: #445060;
+}
+html[data-theme="dark"] .cv-section-title {
+  color: #e0e0e0;
+  border-bottom-color: #4a9fd4;
+}
+html[data-theme="dark"] .cv-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .cv-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+html[data-theme="dark"] .cv-edu-degree { color: #e0e0e0; }
+html[data-theme="dark"] .cv-edu-date   { color: #909aaa; }
+html[data-theme="dark"] .cv-edu-school { color: #4a9fd4; }
+html[data-theme="dark"] .cv-edu-detail { color: #a0a8b8; }
+html[data-theme="dark"] .cv-exp-summary::after { color: #808898; }
+html[data-theme="dark"] .cv-exp-role    { color: #e0e0e0; }
+html[data-theme="dark"] .cv-exp-date    { color: #909aaa; }
+html[data-theme="dark"] .cv-exp-org     { color: #4a9fd4; }
+html[data-theme="dark"] .cv-exp-items   { color: #a8b0c0; }
+html[data-theme="dark"] .cv-exp-project { color: #c8d0e0; }
+html[data-theme="dark"] .cv-exp-sub li  { color: #909aaa; }
+html[data-theme="dark"] .cv-pub-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .cv-pub-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+html[data-theme="dark"] .cv-pub-year {
+  background: #1e2d42;
+  color: #4a9fd4;
+  border-color: #345878;
+}
+html[data-theme="dark"] .cv-pub-title        { color: #e0e0e0; }
+html[data-theme="dark"] .cv-pub-title a      { color: #e0e0e0; }
+html[data-theme="dark"] .cv-pub-authors { color: #909aaa; }
+html[data-theme="dark"] .cv-pub-venue   { color: #a0a8b8; }
+html[data-theme="dark"] .badge-conf     { color: #4a9fd4; border-color: #4a9fd4 !important; }
+html[data-theme="dark"] .badge-review   { color: #909aaa; border-color: #707888 !important; }
+html[data-theme="dark"] .badge-accepted { color: #3abf74; border-color: #3abf74 !important; }
+html[data-theme="dark"] .badge-journal  { color: #b07ae0; border-color: #b07ae0 !important; }
+html[data-theme="dark"] .cv-award-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .cv-award-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+html[data-theme="dark"] .cv-award-year {
+  background: #2a2410;
+  color: #d4a030;
+  border-color: #5a4a18;
+}
+html[data-theme="dark"] .cv-award-name { color: #e0e0e0; }
+html[data-theme="dark"] .cv-skill-group {
+  background: #333840;
+  border-color: #505868;
+}
+html[data-theme="dark"] .cv-skill-group-title { color: #4a9fd4; }
+html[data-theme="dark"] .cv-skill-tag {
+  background: #3a3a3a;
+  border-color: #506070;
+  color: #c0c8d8;
 }
 </style>
 
@@ -269,61 +340,37 @@ details[open] > .cv-exp-summary::after { transform: rotate(90deg); }
 <div class="cv-section">
   <div class="cv-section-title">Publications</div>
 
+  {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+  {% for pub in sorted_pubs %}
   <div class="cv-pub-card">
-    <div class="cv-pub-year">2026</div>
+    <div class="cv-pub-year">{{ pub.date | date: "%Y" }}</div>
     <div class="cv-pub-body">
-      <div class="cv-pub-title">Bridging Neural and Hemodynamic Pathways through EEG–bbNIRS Fusion for Early Alzheimer's Disease Classification</div>
-      <div class="cv-pub-authors">W. Ning, F. Saeed, H. Tang, H. Liu, and L. Wang</div>
-      <div class="cv-pub-venue">Under review, 2026</div>
+      <div class="cv-pub-title">{% if pub.paperurl %}<a href="{{ pub.paperurl }}" target="_blank">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</div>
+      <div class="cv-pub-authors">{{ pub.authors }}</div>
+      <div class="cv-pub-venue">{{ pub.venue }}{% if pub.pages %}, {{ pub.pages }}{% endif %}</div>
     </div>
-    <div class="cv-pub-badge"><span class="badge-review">Under Review</span></div>
-  </div>
-
-  <div class="cv-pub-card">
-    <div class="cv-pub-year">2023</div>
-    <div class="cv-pub-body">
-      <div class="cv-pub-title"><a href="https://ieeexplore.ieee.org/document/10437288" target="_blank" style="color:#222;text-decoration:none;">A Ring Topology-Based Communication-Efficient Scheme for D2D Wireless Federated Learning</a></div>
-      <div class="cv-pub-authors">Z. Xu, W. Tian, Y. Liu, W. Ning and J. Wu</div>
-      <div class="cv-pub-venue">IEEE Global Communications Conference (GLOBECOM), 2023, pp. 2820–2825</div>
+    <div class="cv-pub-badge">
+      {% if pub.category == "conferences" %}<span class="badge-conf">Conference</span>
+      {% elsif pub.category == "manuscripts" %}<span class="badge-review">Under Review</span>
+      {% elsif pub.category == "accepted" %}<span class="badge-accepted">Accepted</span>
+      {% elsif pub.category == "journal" %}<span class="badge-journal">Journal</span>
+      {% endif %}
     </div>
-    <div class="cv-pub-badge"><span class="badge-conf">Conference</span></div>
   </div>
-
-  <div class="cv-pub-card">
-    <div class="cv-pub-year">2022</div>
-    <div class="cv-pub-body">
-      <div class="cv-pub-title"><a href="https://ieeexplore.ieee.org/document/9839128" target="_blank" style="color:#222;text-decoration:none;">Sequence Q-Learning Algorithm for Optimal Mobility-Aware User Association</a></div>
-      <div class="cv-pub-authors">W. Ning, Z. Xu, J. Wu and T. Tong</div>
-      <div class="cv-pub-venue">IEEE International Conference on Communications (ICC), 2022, pp. 726–732</div>
-    </div>
-    <div class="cv-pub-badge"><span class="badge-conf">Conference</span></div>
-  </div>
+  {% endfor %}
 </div>
 
 <!-- Awards -->
 <div class="cv-section">
   <div class="cv-section-title">Awards & Honors</div>
 
+  {% assign award_posts = site.posts | where: "category", "award" | sort: 'date' | reverse %}
+  {% for post in award_posts %}
   <div class="cv-award-card">
-    <div class="cv-award-year">2026</div>
-    <div class="cv-award-name">Math Academic Excellence Scholarship</div>
+    <div class="cv-award-year">{{ post.date | date: "%Y" }}</div>
+    <div class="cv-award-name"><a href="{{ post.permalink | relative_url }}" style="color:inherit;text-decoration:none;">{{ post.title }}</a></div>
   </div>
-  <div class="cv-award-card">
-    <div class="cv-award-year">2026</div>
-    <div class="cv-award-name">Student Travel Award — NSF-CBMS 2026 (Ypsilanti, MI)</div>
-  </div>
-  <div class="cv-award-card">
-    <div class="cv-award-year">2025</div>
-    <div class="cv-award-name">Student Travel Award — CBMS AMML 2025 (Houston, TX)</div>
-  </div>
-  <div class="cv-award-card">
-    <div class="cv-award-year">2025</div>
-    <div class="cv-award-name">Dr. Chien-Pai Han Memorial Scholarship</div>
-  </div>
-  <div class="cv-award-card">
-    <div class="cv-award-year">2024</div>
-    <div class="cv-award-name">Benny M. McCarley Scholarship</div>
-  </div>
+  {% endfor %}
   <div class="cv-award-card">
     <div class="cv-award-year">2023 - now</div>
     <div class="cv-award-name">Graduate Research Assistantship / Graduate Teaching Assistantship, UT Arlington</div>

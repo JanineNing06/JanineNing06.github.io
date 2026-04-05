@@ -100,12 +100,14 @@ author_profile: true
   color: #2a6cc0;
   border: 1px solid #c0d8f0;
   border-radius: 6px;
-  padding: 3px 10px;
+  padding: 3px 0;
   font-size: 0.8em;
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
   margin-top: 2px;
+  width: 56px;
+  text-align: center;
 }
 .pub-card-body { flex: 1; }
 .pub-card-title {
@@ -140,6 +142,48 @@ author_profile: true
 }
 .badge-conference { color: #2a7ac0; border-color: #2a7ac0 !important; }
 .badge-review     { color: #888;    border-color: #bbb !important; }
+
+/* ── Dark mode overrides ── */
+html[data-theme="dark"] .pub-header-card {
+  background: #2e3540;
+  border-color: #445060;
+}
+html[data-theme="dark"] .pub-stats .stat-num   { color: #4a9fd4; }
+html[data-theme="dark"] .pub-stats .stat-label { color: #909aaa; }
+html[data-theme="dark"] .pub-filter-btn {
+  background: #3a3a3a;
+  border-color: #606878;
+  color: #c0c8d8;
+}
+html[data-theme="dark"] .pub-filter-btn:hover {
+  border-color: #4a9fd4;
+  color: #4a9fd4;
+}
+html[data-theme="dark"] .pub-filter-btn.active {
+  background: #4a9fd4;
+  border-color: #4a9fd4;
+  color: #fff;
+}
+html[data-theme="dark"] .pub-year-label {
+  color: #c0c8d8;
+  border-bottom-color: #505868;
+}
+html[data-theme="dark"] .pub-card {
+  background: #3a3a3a;
+  border-color: #505868;
+}
+html[data-theme="dark"] .pub-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+html[data-theme="dark"] .pub-year-badge {
+  background: #1e2d42;
+  color: #4a9fd4;
+  border-color: #345878;
+}
+html[data-theme="dark"] .pub-card-title       { color: #e0e0e0; }
+html[data-theme="dark"] .pub-card-title:hover  { color: #4a9fd4; }
+html[data-theme="dark"] .pub-card-authors      { color: #4a9fd4; }
+html[data-theme="dark"] .pub-card-venue        { color: #909aaa; }
+html[data-theme="dark"] .badge-conference { color: #4a9fd4; border-color: #4a9fd4 !important; }
+html[data-theme="dark"] .badge-review     { color: #909aaa; border-color: #707888 !important; }
 </style>
 
 <!-- Header Stats Card -->

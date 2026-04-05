@@ -7,6 +7,7 @@ permalink: /publication/2023-ring-topology-d2d-federated-learning
 date: 2023-12-01
 venue: "2023 IEEE Global Communications Conference (GLOBECOM)"
 pages: "pp. 2820–2825"
+authors: "Z. Xu, W. Tian, Y. Liu, W. Ning and J. Wu"
 first_author: "W. Ning (Co-Author)"
 paperurl: "https://ieeexplore.ieee.org/document/10437288"
 pdf_local: "/files/A_Ring_Topology-Based_Communication-Efficient_Scheme_for_D2D_Wireless_Federated_Learning.pdf"

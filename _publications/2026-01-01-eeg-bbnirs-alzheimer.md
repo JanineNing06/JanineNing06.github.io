@@ -6,6 +6,7 @@ category: manuscripts
 permalink: /publication/2026-eeg-bbnirs-alzheimer
 date: 2026-01-01
 venue: "Under Review"
+authors: "W. Ning, F. Saeed, H. Tang, H. Liu, and L. Wang"
 first_author: "W. Ning (First Author)"
 citation: 'W. Ning, F. Saeed, H. Tang, H. Liu, and L. Wang. &quot;Bridging Neural and Hemodynamic Pathways through EEG–bbNIRS Fusion for Early Alzheimer&apos;s Disease Classification.&quot; <i>Under review</i>, 2026.'
 excerpt: 'A multimodal fusion framework integrating EEG and bbNIRS signals for early Alzheimer''s disease screening, achieving 7–12% improvement in AUC over unimodal baselines.'
