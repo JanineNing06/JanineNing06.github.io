@@ -306,6 +306,10 @@ details[open] > .cv-exp-summary::after { transform: rotate(90deg); }
 
   <div class="cv-award-card">
     <div class="cv-award-year">2026</div>
+    <div class="cv-award-name">Math Academic Excellence Scholarship</div>
+  </div>
+  <div class="cv-award-card">
+    <div class="cv-award-year">2026</div>
     <div class="cv-award-name">Student Travel Award — NSF-CBMS 2026 (Ypsilanti, MI)</div>
   </div>
   <div class="cv-award-card">
