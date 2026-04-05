@@ -187,11 +187,12 @@ redirect_from:
 .about-news-more:hover { text-decoration: underline; }
 </style>
 
+
+<div class="about-news-list">
   <div class="about-news-item">
     <span class="about-news-date">2026</span>
     <span class="about-news-text">Received <strong>Math Academic Excellence Scholarship</strong></span>
   </div>
-<div class="about-news-list">
   <div class="about-news-item">
     <span class="about-news-date">May 2026</span>
     <span class="about-news-text">Received <strong>Student Travel Award</strong> for NSF-CBMS 2026 (Ypsilanti, MI)</span>
